@@ -37,7 +37,7 @@ def astar(maze, start, end):
         if current_node == end_node:
             #path = []
             current = current_node
-            qost = 0
+            cost = 0
             while current is not None:
                 #path.append(current.position)
                 if (maze[current.position[0]][current.position[1]]==0):
@@ -46,7 +46,7 @@ def astar(maze, start, end):
                     cost+=3
                 current = current.parent
             #return path[;;-1] here if needed
-            return q
+            return cost
 
         children = []
         for new_position in [(0, -1), (0, 1), (-1, 0), (1, 0)]: #add diagonal stuff here
